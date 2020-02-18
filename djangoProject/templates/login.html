@@ -1,0 +1,64 @@
+
+{% extends "base.html" %}
+
+{% block head_title %}{{ title }} | {{ block.super }} {% endblock head_title %}
+{% block user_login_status %}{% endblock user_login_status %}
+
+
+
+{% block content1 %}
+
+<div class="grid_3">
+  <div class="container">
+   <div class="breadcrumb1">
+     <ul>
+        <a href="index-2.html"><i class="fa fa-home home_1"></i></a>
+        <span class="divider">&nbsp;|&nbsp;</span>
+        <li class="current-page">Login</li>
+     </ul>
+   </div>
+{% include "messages.html" %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+{% endif %}
+
+   <div class="services">
+   	  <div class="col-sm-6 login_left">
+	   <form name="LoginForm" action="/login/" method="post">{% csrf_token %}
+  	    <div class="form-group">
+        <label for="usernameInput">Email address</label>
+        <input type="text" class="form-control" id="usernameInput" name="username" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password">
+          </div>
+	    <div class="form-actions">
+	    	<input type="submit" id="edit-submit" name="op" value="Log in" class="btn_1 submit">
+	    </div>
+           <input type="hidden" name="next" value="{{ next }}" />
+	   </form>
+	  </div>
+	  <div class="col-sm-6">
+	    <ul class="sharing">
+			<li><a href="#" class="facebook" title="Facebook"><i class="fa fa-boxed fa-fw fa-facebook"></i> Share on Facebook</a></li>
+		  	<li><a href="#" class="twitter" title="Twitter"><i class="fa fa-boxed fa-fw fa-twitter"></i> Tweet</a></li>
+		  	<li><a href="#" class="google" title="Google"><i class="fa fa-boxed fa-fw fa-google-plus"></i> Share on Google+</a></li>
+		  	<li><a href="#" class="linkedin" title="Linkedin"><i class="fa fa-boxed fa-fw fa-linkedin"></i> Share on LinkedIn</a></li>
+		  	<li><a href="#" class="mail" title="Email"><i class="fa fa-boxed fa-fw fa-envelope-o"></i> E-mail</a></li>
+		</ul>
+	  </div>
+	  <div class="clearfix"> </div>
+   </div>
+
+
+  </div>
+</div>
+
+{% endblock content1 %}

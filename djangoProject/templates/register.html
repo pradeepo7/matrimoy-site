@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+ {% load widget_tweaks %}
+{% load crispy_forms_tags %}
+{% load crop %}
+
+{% block head_title %}{{ title }} | {{ block.super }} {% endblock head_title %}
+
+
+{% block content %}
+
+
+
+
+    <div class="grid_3">
+  <div class="container">
+   <div class="breadcrumb1">
+     <ul>
+        <a href="index-2.html"><i class="fa fa-home home_1"></i></a>
+        <span class="divider">&nbsp;|&nbsp;</span>
+        <li class="current-page">Register</li>
+     </ul>
+   </div>
+
+{% include "messages.html" %}
+
+   <div class="services">
+   	  <div class="col-sm-6 login_left">
+
+
+           <form action="" method="POST" enctype="multipart/form-data" role="form">{% csrf_token %}
+		<legend>Create a Basic Profile</legend>
+
+
+
+
+<div id="div_id_name" class="form-group"> <label for="id_name" class="control-label  requiredField">
+                Name<span class="asteriskField">*</span> </label> <div class="controls "> <input class="textinput textInput form-control" id="id_name" maxlength="50" name="name" required="required" type="text"> </div> </div> <div id="div_id_gender" class="form-group"> <label for="id_gender" class="control-label  requiredField">
+                Gender<span class="asteriskField">*</span> </label> <div class="controls "> <select required="required" class="select form-control" id="id_gender" name="gender">
+<option value="" selected="selected">---------</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select> </div> </div> <div id="div_id_dateOfBirth" class="form-group"> <label for="id_dateOfBirth" class="control-label  requiredField">
+                Date of Birth/Time - Format : YYYY-MM-DD HH:MM<span class="asteriskField">*</span> </label> <div class="controls "> <input required="required" class="datetimeinput form-control" id="id_dateOfBirth" name="dateOfBirth" type="text"> </div> </div> <div id="div_id_maritalStatus" class="form-group"> <label for="id_maritalStatus" class="control-label  requiredField">
+                MaritalStatus<span class="asteriskField">*</span> </label> <div class="controls "> <select required="required" class="select form-control" id="id_maritalStatus" name="maritalStatus">
+<option value="single" selected="selected">Single</option>
+<option value="married">Married</option>
+<option value="divorced">Divorced</option>
+</select> </div> </div> <div id="div_id_religion" class="form-group"> <label for="id_religion" class="control-label  requiredField">
+                Religion<span class="asteriskField">*</span> </label> <div class="controls "> <select required="required" class="select form-control" id="id_religion" name="religion">
+<option value="" selected="selected">---------</option>
+<option value="hindu">Hindu</option>
+<option value="cristian">Cristian</option>
+<option value="muslim">Muslim</option>
+<option value="sikh">Sikh</option>
+<option value="buddhist">Buddhist</option>
+</select> </div> </div> <div id="div_id_image" class="form-group"> <label for="id_image" class="control-label ">
+                Image
+            </label> <div class="controls "> <input required="required" id="id_image" name="image" type="file"> </div> </div>
+
+
+
+
+
+
+			  <div class="form-actions">
+			    <input type="submit" name="submit" value="Save and Continue" class="btn_1 submit">
+			  </div>
+
+	    </form>
+
+</div>
+	  </div>
+	  <div class="col-sm-6">
+	     <ul class="sharing">
+			<li><a href="#" class="facebook" title="Facebook"><i class="fa fa-boxed fa-fw fa-facebook"></i> Share on Facebook</a></li>
+		  	<li><a href="#" class="twitter" title="Twitter"><i class="fa fa-boxed fa-fw fa-twitter"></i> Tweet</a></li>
+		  	<li><a href="#" class="google" title="Google"><i class="fa fa-boxed fa-fw fa-google-plus"></i> Share on Google+</a></li>
+		  	<li><a href="#" class="linkedin" title="Linkedin"><i class="fa fa-boxed fa-fw fa-linkedin"></i> Share on LinkedIn</a></li>
+		  	<li><a href="#" class="mail" title="Email"><i class="fa fa-boxed fa-fw fa-envelope-o"></i> E-mail</a></li>
+		 </ul>
+	  </div>
+	  <div class="clearfix"> </div>
+   </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endblock content %}
+
