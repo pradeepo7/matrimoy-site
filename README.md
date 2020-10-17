@@ -20,6 +20,17 @@ Install the following plugins:
 5. django-imagekit 3.3 - https://pypi.python.org/pypi/django-imagekit/3.3
 
 6. django-crispy-forms 1.6.0 - https://pypi.python.org/pypi/django-crispy-forms/1.6.0
+
+#Configurations
+
+Admin Details
+
+Details of Superuser: Username: "admin"  Password: "project123"
+
+To check all the functionality, register a user and create a profile. ->VIEW ->UPDATE ->DELETE ->SEARCH.
+
+
+
 ![image](https://user-images.githubusercontent.com/43827080/96338769-eb6b5a80-10ad-11eb-92da-b9af71ac5d2a.png)
 
 ![image](https://user-images.githubusercontent.com/43827080/96338804-23729d80-10ae-11eb-883f-167c7a8a93b5.png)
